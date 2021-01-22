@@ -2,16 +2,9 @@
 
 constexpr auto black_constexpr = 0;
 
-enum class Side { black_enum, RED };
+enum Side { black_enum, RED };
+enum Type { MAN, KING, DEAD };
 
-struct Game {
-
-    // public method
-    void make_move(Move);
-    void start_game();
-    Piece field[8][8];
-    Side side;
-};
 struct Move{
     Side side;
     int src_x;
@@ -21,7 +14,15 @@ struct Move{
 };
 
 struct Piece {
-    enum Type {MAN, KING, DEAD};
     Side side;
+    Type type;
+};
 
+struct Game {
+
+    void make_move(Move);
+    void start_game();
+
+    Piece field[8][8];
+    Side side;
 };
