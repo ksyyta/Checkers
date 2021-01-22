@@ -1,16 +1,13 @@
-#define black_define 0
 
-constexpr auto black_constexpr = 0;
-
-enum Side { black_enum, RED };
+enum Side { BLACK, RED };
 enum Type { MAN, KING, DEAD };
 
-struct Move{
-    Side side;
-    int src_x;
-    int src_y;
-    int dst_x;
-    int dst_y;
+struct Move {
+    Side    side;
+    int     src_x;
+    int     src_y;
+    int     dst_x;
+    int     dst_y;
 };
 
 struct Piece {
@@ -20,9 +17,9 @@ struct Piece {
 
 struct Game {
 
-    void make_move(Move);
-    void start_game();
+    void    make_move(Move);
+    void    start_game();
 
-    Piece field[8][8];
-    Side side;
+    Piece   field[8][8];
+    Side    side;
 };
